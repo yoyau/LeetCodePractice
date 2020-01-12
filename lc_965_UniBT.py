@@ -39,11 +39,13 @@ class Solution2(object):
         """
         :type root: TreeNode
         :rtype: bool
-        """
-        if not root: return True
+        """   
         return self.isUniNode(root, root.val)
     
     def isUniNode(self, node, unival):
         if not node: return True
+        if node.val != unival:
+            return False
+        return self.isUniNode(node.left, unival) and self.isUniNode(node.right, unival)
         
         
