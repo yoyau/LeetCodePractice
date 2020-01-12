@@ -34,5 +34,16 @@ class Solution1(object):
             self.visit(root.right)
             
 
-
-
+class Solution2(object):
+    def isUnivalTree(self, root: TreeNode):
+        """
+        :type root: TreeNode
+        :rtype: bool
+        """
+        if not root: return True
+        return self.isUniNode(root, root.val)
+    
+    def isUniNode(self, node, unival):
+        if not node: return True
+        
+        
