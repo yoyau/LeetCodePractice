@@ -3,8 +3,13 @@
 814. Binary Tree Pruning
 """
 
+from 
+
 class Solution(object):
+    
     def pruneTree(self, root):
+    
+    def pruneTree_1(self, root):
         """
         :type root: TreeNode
         :rtype: TreeNode
@@ -14,8 +19,8 @@ class Solution(object):
             return
         if self.isUniZero(root.left): root.left = None
         if self.isUniZero(root.right): root.right = None
-        self.pruneTree(root.left)
-        self.pruneTree(root.right)
+        self.pruneTree_1(root.left)
+        self.pruneTree_1(root.right)
         return root
 
     def isUniZero(self, node):
@@ -23,3 +28,4 @@ class Solution(object):
         if node.val != 0:
             return False
         return self.isUniNode(node.left) and self.isUniNode(node.right)
+
