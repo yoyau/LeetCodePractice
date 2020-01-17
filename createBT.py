@@ -18,7 +18,7 @@ class BTRoot:
                  
         self.nodeDic = {}
         for i in range(len(nodeValList)):
-            if nodeValList[i]:
+            if nodeValList[i] != None:
                 self.nodeDic['TreeNode_'+str(i)]=TreeNode(nodeValList[i])
             else:
                 self.nodeDic['TreeNode_'+str(i)]=None
