@@ -10,18 +10,11 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n == 0: return
-        if n >= 1:
-            u = [1]
-            o = [0]
-            none = [2]
-        for i in range(2, n+1):
-            print(i)
-            u.append(u[i-2]*none[i-2]-o[i-2])
-            o.append(i*(i-1)/2*u[i-2])
-            none.append(i+1)
-        print(u)
-        print(o)
-        print(none)
-        return u[n-1]
+        dp = [1]
+        for i in range(n):
+            unique=0
+            for j in range(i+1):
+                unique+=dp[j]*dp[i-j]
+            dp.append(unique)
+        return dp[n]
 s = Solution().numTrees(5)
