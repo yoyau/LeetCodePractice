@@ -12,43 +12,40 @@ class FindElements(object):
         :type root: TreeNode
         """
         if not root: return
-        root.val = 0
-        self.recover(root)
         self.root = root
-        
-    def recover(self, node):
-        if not node: return
-        if node.left:
-            node.left.val = 2*node.val+1
-            self.recover(node.left)
-        if node.right:
-            node.right.val = 2*node.val+2
-            self.recover(node.right)
             
     def find(self, target):
         """
         :type target: int
         :rtype: bool
         """
-        targetPath = [target]
+        path = []
         while target != 0:
             if target % 2 == 1:
+                path.append('L')
                 target = (target-1)/2
-                targetPath.append(target)
             else:
-                target=(target-2)/2
-                targetPath.append(target)
-        print(targetPath)
-        currentNode = self.root
-        for i in range(-2, -(len(targetPath))-1, -1):
-            if currentNode.left and currentNode.left.val == targetPath[i]:
-                currentNode = currentNode.left
-            elif currentNode.right and currentNode.right.val == targetPath[i]:
-                currentNode = currentNode.right
+                path.append('R')
+                target = (target-2)/2
+        
+        c = self.root
+        while len(path):
+            direction = path[-1]
+            if direction == 'L':
+                if not c.left: 
+                    return False
+                else:
+                    c = c.left
+                    del path[-1]
             else:
-                return False
+                if not c.right:
+                    return False
+                else:
+                    c = c.right
+                    del path[-1]
         return True
+            
     
-root = BTRoot([-1,None,-1,None,None,-1,None,-1]).get_root()
+root = BTRoot([-1,None,-1,None,None,-1,None]).get_root()
 f = FindElements(root)
-found = f.find(11)
+found = f.find(2)
