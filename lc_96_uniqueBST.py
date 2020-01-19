@@ -2,6 +2,21 @@
 """
 96. Unique Binary Search Trees
 
+#n: # of unique way to distribute nodes
+
+#0 = 1
+
+#1 = #0 * #0
+
+#2 = #1 * #0
+   + #0 * #1
+
+#3 = #2 * #0
+   + #1 * #1
+   + #0 * #2
+     .
+     .
+     .
 """
 
 class Solution(object):
