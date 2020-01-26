@@ -23,14 +23,12 @@ class Solution(object):
         if not to_be_deleted: return False
         
         while to_be_deleted:
-            print(to_be_deleted)
             i = to_be_deleted.pop()
             ts += 1
             for neighbor in outList[i]:
                 indeg[neighbor] -= 1
                 if indeg[neighbor] == 0:
                     to_be_deleted.append(neighbor)
-        print(ts)
         if ts <= numCourses: 
             return True
         else:
