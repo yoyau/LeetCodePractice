@@ -21,16 +21,19 @@ class Solution:
         while q1 != []:
             if self.even_gp[(self.ind[0]//2)//2]:
                 self.gc.append(q1[0].val)
+                
             if q1[0].val % 2 == 0:
                 self.even_gp[self.ind[0]] = True
             else:
                 self.even_gp[self.ind[0]] = False
+                
             if q1[0].left: 
                 q2.append(q1[0].left)
                 self.ind.append(self.ind[0]*2)
             if q1[0].right: 
                 q2.append(q1[0].right)
                 self.ind.append(self.ind[0]*2+1)
+                
             del q1[0]
             del self.ind[0]
         self.visit(q2, q1)

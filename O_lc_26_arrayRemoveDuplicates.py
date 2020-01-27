@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Crenumsted on Tue numsug 13 23:46:03 2019
-
-@numsuthor: yoynumsu.eo06g
+26. Remove Duplicates from Sorted Array
 """
 
 #nums = [1,1,2]
