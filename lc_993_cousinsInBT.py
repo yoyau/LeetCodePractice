@@ -17,32 +17,30 @@ class Solution(object):
         :type y: int
         :rtype: bool
         """
-        if not root: return
         self.q1=[root]
-        self.q2=[]
-        level_vals = [root.val]
-
-        while level_vals != []:
-            if x in level_vals and y in level_vals: return True
-            if x in level_vals or y in level_vals: return False
-            level_vals = self.visit(self.q1, self.q2, x, y)    
-            self.q1, self.q2 = self.q2, self.q1
-        return False
+        self.q2=[]   
+        self.level_ind = [1]        
+        return self.visit(self.q1, self.q2, x, y)
     
     def visit(self, q1, q2, x, y):
         if q1 == []:
-            return []
-        temp = []
+            return False
+        
+        target_ind = []
         while q1 != []:
-            temp.append(q1[0].val)
-            if (q1[0].left and q1[0].right):
-                if (q1[0].left.val == x and q1[0].right.val == y) or (q1[0].left.val == y and q1[0].right.val == x):
-                    temp = []
-                    return
-                else:
-                    q2.append(q1[0].left)
-                    q2.append(q1[0].right)
-            if q1[0].left: q2.append(q1[0].left)
-            if q1[0].right: q2.append(q1[0].right)
-            del q1[0]
-        return temp
+            node = q1.pop(0)
+            node_ind = self.level_ind.pop(0)
+            if node.val == x or node.val == y:
+                target_ind.append(node_ind)
+            if node.left: 
+                q2.append(node.left)
+                self.level_ind.append(2*node_ind)
+            if node.right: 
+                q2.append(node.right)
+                self.level_ind.append(2*node_ind+1)
+        
+        if len(target_ind) == 1: return False
+        if len(target_ind) == 2 and abs(target_ind[0]//2 != target_ind[1]//2):
+            return True
+        else:
+            return self.visit(q2, q1, x, y)
