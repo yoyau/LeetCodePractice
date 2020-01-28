@@ -22,16 +22,16 @@ class Solution(object):
                 self._outList[eqa[0]] = {eqa[1]:values[i]}
         ans = []
         for q in queries:
-            ans.append(self.divide(queries[0], queries[1]))
+            ans.append(self.divide(queries[0], queries[1], []))
         return ans
     
-    def divide(self, i, j):
-        if self._outList[i][j]:
-            return self._outList[i][j]
-        else:
-            for neighbor in self._outList[i]:
-                self.divide(neighbor, j)
-
+    def divide(self, i, j, visited):
+        if i==j: return 1
+        for neighbor in self._outList[i]:
+            visited.append(i)
+            m = self.divide(neighbor, j, visited)
+            if m > 0:
+                return m * self._outList[i][j]
 equations = [ ["a", "b"], ["b", "c"] ]
 values = [2.0, 3.0]
 queries = [ ["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"] ]
