@@ -14,10 +14,8 @@ class Solution_0:
             for j in range(i):
                 if M[i][j]:
                     self.merge(i, j)
-        
-        for i in range(num):
-            self.find(i)
-        print(self.friend)
+                    
+        # return the node whose parents is itself
         return len([1 for i, val in enumerate(self.friend) if self.friend[i]==i])
     
     def find(self, x):
