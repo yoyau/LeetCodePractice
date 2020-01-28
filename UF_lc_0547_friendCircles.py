@@ -17,7 +17,8 @@ class Solution_0:
         
         for i in range(num):
             self.find(i)
-        return len(set(self.friend))
+        print(self.friend)
+        return len([1 for i, val in enumerate(self.friend) if self.friend[i]==i])
     
     def find(self, x):
         if x != self.friend[x]:
