@@ -39,7 +39,8 @@ class Solution(object):
             if neighbor not in visited:   
                 m = self.divide(neighbor, j, visited)
                 
-                # if m == -1 represents its neighbor couldn't reach target
+                # if m == -1 represents its neighbor couldn't reach target,
+                # this inform the parent couldn't reach target either.
                 if m > 0:
                     return m * self._outList[i][neighbor]
         else:
