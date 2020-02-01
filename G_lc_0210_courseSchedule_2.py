@@ -4,11 +4,11 @@
 """
 
 class Solution(object):
-    def canFinish(self, numCourses, prerequisites):
+    def findOrder(self, numCourses, prerequisites):
         """
         :type numCourses: int
         :type prerequisites: List[List[int]]
-        :rtype: bool
+        :rtype: List[int]
         """
         # Convert edge to incoming adjacency linked list
         indeg = [0 for i in range(numCourses)]
@@ -23,7 +23,6 @@ class Solution(object):
         if not to_be_deleted: return []
         
         while to_be_deleted:
-            print(to_be_deleted)
             i = to_be_deleted.pop()
             course.append(i)
             for neighbor in outList[i]:
@@ -37,4 +36,4 @@ class Solution(object):
         
 num = 4
 pre = [[1,0],[2,0],[3,1],[3,2]]
-result = Solution().canFinish(num, pre)
+result = Solution().findOrder(num, pre)
