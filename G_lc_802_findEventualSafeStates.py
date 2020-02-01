@@ -17,8 +17,6 @@ class Solution(object):
             outdeg[i] += len(outEdge)
             for node in outEdge:
                 inList[node].append(i)    
-        print(inList)
-        print(outdeg)
         
         # delete one node with outdeg == 0 
         safeStates = []
@@ -26,7 +24,6 @@ class Solution(object):
         if not to_be_deleted: return []
         
         while to_be_deleted:
-#            print(to_be_deleted)
             i = to_be_deleted.pop()
             safeStates.append(i)
             for preState in inList[i]:
