@@ -4,6 +4,6 @@ using namespace std;
 
 void printsth(void)
 {
-	cout << "aaaa";
+	cout << "aaaba";
 	return;
 }
