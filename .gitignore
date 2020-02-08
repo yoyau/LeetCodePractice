@@ -7,6 +7,9 @@ Debug/
 Release/
 cpp/cpp.vcxproj
 cpp/cpp.vcxproj.filters
+*.filters
 cpp/cpp.vcxproj.user
 cpp/Debug
 .vs
+cpp/main.cpp
+cpp/test.h

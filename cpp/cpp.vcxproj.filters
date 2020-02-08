@@ -23,5 +23,11 @@
     <ClInclude Include="test.h">
       <Filter>標頭檔</Filter>
     </ClInclude>
+    <ClInclude Include="ListNode.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
+    <ClInclude Include="lc_0206_reverseLinkedList.h">
+      <Filter>標頭檔</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
