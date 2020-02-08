@@ -1,11 +1,10 @@
 
 
 #include <iostream>
-#include "Header.h"
+#include "test.h"
 
 int main()
 {
-    std::cout << "Heldlo World!\n";
-    printsth();
+    testfun();
     return 0;
 }
