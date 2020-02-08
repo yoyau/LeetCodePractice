@@ -8,6 +8,7 @@ public:
             first = first->next;
             second = second->next->next;
         }
+
         // reverse second part of the LL
         first = reverseList(first);
 
