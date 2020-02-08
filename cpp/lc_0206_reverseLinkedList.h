@@ -1,12 +1,5 @@
 #pragma once
 
-#include <iostream>
-//#include "ListNode.h"
-using namespace std;
-
-
-//ListNode head;
-
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {

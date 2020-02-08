@@ -10,7 +10,7 @@ int main()
 {
     // creat linked list
     const int number = 5;
-    int input[number] = { 1,2,3,4,5 };
+    int input[number] = { 1,2,3,5 };
     ListNode start(input[0]);
     ListNode* head = &start;
     ListNode* ptr = &start;
