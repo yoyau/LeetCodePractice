@@ -1,7 +1,7 @@
 #include <iostream>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0206_reverseLinkedList.h"
+#include "lc_0234_palindromeLinkedList.h"
 
 using namespace std;
 void scanLL(ListNode*);
@@ -10,7 +10,8 @@ int main()
 {
     // creat linked list
     const int number = 5;
-    int input[number] = { 1,2,3,5 };
+    int input[number] = { 1, 2, 1,2,1};
+
     ListNode start(input[0]);
     ListNode* head = &start;
     ListNode* ptr = &start;
@@ -25,7 +26,7 @@ int main()
     //scanLL(head);
 
     Solution s;
-    scanLL(s.reverseList(head));
+    cout << s.isPalindrome(head);
 
     return 0;
 }
