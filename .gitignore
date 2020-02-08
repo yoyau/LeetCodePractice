@@ -3,6 +3,8 @@ __pycache__
 *.ldf
 *.opendb
 *.suo
-
+Debug/
+Release/
 cpp/cpp.vcxproj
 cpp/Debug
+.vs
