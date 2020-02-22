@@ -2,7 +2,7 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0021_merge2SortedLists.h"
+#include "lc_0160_intersectionof2LL.h"
 
 using namespace std;
 void scanLL(ListNode*);
@@ -10,12 +10,12 @@ void scanLL(ListNode*);
 int main()
 {
     // creat linked list
-    vector<int> v{ 1,2,4 };
+    vector<int> v{ 3,2,4 };
     vector<ListNode> linkedL(v.size(), 10);
     creatLL(v, linkedL);
 
-    vector<int> v2{ 1,3,4 };
-    vector<ListNode> linkedL2(v.size(), 10);
+    vector<int> v2{ 0,9,1,2,4 };
+    vector<ListNode> linkedL2(v2.size(), 10);
     creatLL(v2, linkedL2);
 
     // check content in linked list
@@ -24,9 +24,9 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    ListNode* l = s.mergeTwoLists(&linkedL[0], &linkedL2[0]);
-
-    scanLL(l);
+    ListNode* l = s.getIntersectionNode(&linkedL2[0], &linkedL[0]);
+    //scanLL(l);
+    //cout << l->val << endl;
     return 0;
 }
 
