@@ -1,7 +1,8 @@
 #include <iostream>
+#include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0203_removeLinkedListElements.h"
+#include "lc_0021_merge2SortedLists.h"
 
 using namespace std;
 void scanLL(ListNode*);
@@ -9,28 +10,23 @@ void scanLL(ListNode*);
 int main()
 {
     // creat linked list
-    const int number = 7;
-    int input[number] = { 1, 2, 6, 3, 4, 5, 6};
+    vector<int> v{ 1,2,4 };
+    vector<ListNode> linkedL(v.size(), 10);
+    creatLL(v, linkedL);
 
-    ListNode start(input[0]);
-    ListNode* head = &start;
-    ListNode* ptr = &start;
-
-    for (int i = 1;i < number;i++)
-    {
-        ptr->next = new ListNode(input[i]);
-        ptr = ptr->next;
-    }
+    vector<int> v2{ 1,3,4 };
+    vector<ListNode> linkedL2(v.size(), 10);
+    creatLL(v2, linkedL2);
 
     // check content in linked list
-    scanLL(head);
-    cout << endl << "after remove fun" << endl;
+    scanLL(&linkedL[0]);
+    scanLL(&linkedL2[0]);
+    cout << endl << "after fun" << endl;
 
-    
     Solution s;
-    head = s.removeElements(head, 6);
+    ListNode* l = s.mergeTwoLists(&linkedL[0], &linkedL2[0]);
 
-    scanLL(head);
+    scanLL(l);
     return 0;
 }
 
