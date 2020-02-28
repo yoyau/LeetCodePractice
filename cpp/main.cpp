@@ -2,7 +2,7 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_1313_decompressRun-LengthEncodedList.h"
+#include "lc_0092_reverseLL_II.h"
 
 using namespace std;
 void scanLL(ListNode*);
@@ -24,10 +24,8 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    vector<int> testingVector = s.decompressRLElist(v);
-    //ListNode* l = s.addTwoNumbers(&linkedL2[0], &linkedL[0]);
-    //scanLL(l);
-    //cout << l->val << endl;
+    s.reverseBetween(&linkedL[0], 2, 3);
+    scanLL(&linkedL[0]);
     return 0;
 }
 
