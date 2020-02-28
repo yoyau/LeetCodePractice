@@ -2,14 +2,15 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0167_twoSumII.h"
+#include "lc_0039_combinationSum.h"
 using namespace std;
 void scanLL(ListNode*);
+void scanVV(vector<vector<int>>&);
 
 int main()
 {
     // creat linked list
-    vector<int> v{ 2,3,4,5,18,17,6 };
+    vector<int> v{ 10,1,2,7,6,1,5 };
     vector<ListNode> linkedL(v.size(), 10);
     creatLL(v, linkedL);
 
@@ -23,7 +24,9 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    v2 = s.twoSum(v, 10);
+    vector<vector<int>> a = s.combinationSum2(v, 8);
+    scanVV(a);
+
     // scanLL(&linkedL[0);
     return 0;
 }
@@ -34,4 +37,13 @@ void scanLL(ListNode* head) {
         head = head->next;
     }
     cout << head->val << endl;
+}
+
+void scanVV(vector<vector<int>>& vec) {
+    for (auto v : vec) {
+        for (auto e : v) {
+            cout << e;
+        }
+        cout << endl;
+    } 
 }
