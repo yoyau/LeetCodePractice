@@ -2,7 +2,7 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0092_reverseLL_II.h"
+#include "lc_0977_squaresofSortedArray.h"
 
 using namespace std;
 void scanLL(ListNode*);
@@ -10,7 +10,7 @@ void scanLL(ListNode*);
 int main()
 {
     // creat linked list
-    vector<int> v{ 2,4,3,1 };
+    vector<int> v{ -4,-1,0,3,10 };
     vector<ListNode> linkedL(v.size(), 10);
     creatLL(v, linkedL);
 
@@ -24,8 +24,8 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    s.reverseBetween(&linkedL[0], 2, 3);
-    scanLL(&linkedL[0]);
+    v2 = s.sortedSquares(v);
+    // scanLL(&linkedL[0);
     return 0;
 }
 
