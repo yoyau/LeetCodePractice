@@ -2,7 +2,7 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0002_add2Num.h"
+#include "lc_1313_decompressRun-LengthEncodedList.h"
 
 using namespace std;
 void scanLL(ListNode*);
@@ -10,7 +10,7 @@ void scanLL(ListNode*);
 int main()
 {
     // creat linked list
-    vector<int> v{ 2,4,3 };
+    vector<int> v{ 2,4,3,1 };
     vector<ListNode> linkedL(v.size(), 10);
     creatLL(v, linkedL);
 
@@ -24,7 +24,8 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    ListNode* l = s.addTwoNumbers(&linkedL2[0], &linkedL[0]);
+    vector<int> testingVector = s.decompressRLElist(v);
+    //ListNode* l = s.addTwoNumbers(&linkedL2[0], &linkedL[0]);
     //scanLL(l);
     //cout << l->val << endl;
     return 0;
