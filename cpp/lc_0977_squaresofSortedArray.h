@@ -20,9 +20,6 @@ public:
             }
         }
         *it = (*end) * (*end);
-        for (auto sq : square) {
-            cout << sq << endl;
-        }
         return square;
     }
 };
