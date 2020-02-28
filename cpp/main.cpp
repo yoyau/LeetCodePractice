@@ -2,7 +2,7 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0977_squaresofSortedArray.h"
+#include "lc_0011_containerWithMostWater.h"
 
 using namespace std;
 void scanLL(ListNode*);
@@ -10,7 +10,7 @@ void scanLL(ListNode*);
 int main()
 {
     // creat linked list
-    vector<int> v{ -4,-1,0,3,10 };
+    vector<int> v{ 2,3,4,5,18,17,6 };
     vector<ListNode> linkedL(v.size(), 10);
     creatLL(v, linkedL);
 
@@ -24,7 +24,7 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    v2 = s.sortedSquares(v);
+    int a = s.maxArea(v);
     // scanLL(&linkedL[0);
     return 0;
 }
