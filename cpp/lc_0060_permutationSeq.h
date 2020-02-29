@@ -7,14 +7,28 @@ using namespace std;
 
 class Solution {
 public:
-     void getPermutation(int n, int k) {
+     string getPermutation(int n, int k) {
         string cur;
         int curNum = 0;
         vector<bool> used(n, 0);
         combinationSearch(n, k, n, used, curNum, cur);
-        cout << cur << endl;
-        //return set;
-    }
+        return cur;
+     }
+     // undone
+     string getPermutation_quick(int n, int k) {
+         string sol, candidates("0123456789");
+         vector<int> fact(n, 0);
+         fact[0] = 1;
+         int fixed;
+         for (int i = 1;i < n;++i) {
+             fact[i] = (i+1) * fact[i - 1];
+             if (fact[i] > k) {
+                 fixed = fact[i-1];
+                 break;
+             }
+         }
+         sol.push_back(candidates[k / fixed]);
+     }
 
 private:
     void combinationSearch(int maxLength, int k, int depth, vector<bool> &used, int&curNum, string& cur) {
