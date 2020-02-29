@@ -2,16 +2,16 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0077_combinations.h"
-
+#include "lc_0078_subsets.h"
 using namespace std;
+
 void scanLL(ListNode*);
 void scanVV(vector<vector<int>>&);
 
 int main()
 {
     // creat linked list
-    vector<int> v{ 1,2,3 };
+    vector<int> v{ 1,2,2 };
     vector<ListNode> linkedL(v.size(), 10);
     creatLL(v, linkedL);
 
@@ -25,7 +25,7 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    vector<vector<int>> a =  s.combine(4,2);
+    vector<vector<int>> a =  s.subsetsWithDup(v);
     scanVV(a);
 
     // scanLL(&linkedL[0);
