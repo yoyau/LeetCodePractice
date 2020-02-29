@@ -2,7 +2,7 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0078_subsets.h"
+#include "lc_0017_letterCombinationsofPhoneNum.h"
 using namespace std;
 
 void scanLL(ListNode*);
@@ -25,8 +25,8 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    vector<vector<int>> a =  s.subsetsWithDup(v);
-    scanVV(a);
+    s.letterCombinations("23");
+    //scanVV(a);
 
     // scanLL(&linkedL[0);
     return 0;
