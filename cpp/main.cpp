@@ -2,7 +2,7 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0784_letterCasePermutation.h" 
+#include "lc_0060_permutationSeq.h"
 using namespace std;
 
 void scanLL(ListNode*);
@@ -25,7 +25,7 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    vector<string> a = s.letterCasePermutation("C");
+    s.getPermutation(4,9);
     //scanVV(a);
 
     // scanLL(&linkedL[0);
