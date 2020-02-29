@@ -2,7 +2,8 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0039_combinationSum.h"
+#include "lc_0077_combinations.h"
+
 using namespace std;
 void scanLL(ListNode*);
 void scanVV(vector<vector<int>>&);
@@ -24,8 +25,8 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    cout << s.combinationSum4(v2, 10000);
-    //scanVV(a);
+    vector<vector<int>> a =  s.combine(4,2);
+    scanVV(a);
 
     // scanLL(&linkedL[0);
     return 0;
