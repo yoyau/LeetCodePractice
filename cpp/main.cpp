@@ -2,7 +2,7 @@
 #include <vector>
 #include "test.h"
 #include "ListNode.h"
-#include "lc_0017_letterCombinationsofPhoneNum.h"
+#include "lc_0784_letterCasePermutation.h" 
 using namespace std;
 
 void scanLL(ListNode*);
@@ -11,7 +11,7 @@ void scanVV(vector<vector<int>>&);
 int main()
 {
     // creat linked list
-    vector<int> v{ 1,2,2 };
+    vector<int> v{ 1,1,2 };
     vector<ListNode> linkedL(v.size(), 10);
     creatLL(v, linkedL);
 
@@ -25,7 +25,7 @@ int main()
     cout << endl << "after fun" << endl;
 
     Solution s;
-    s.letterCombinations("23");
+    vector<string> a = s.letterCasePermutation("C");
     //scanVV(a);
 
     // scanLL(&linkedL[0);
